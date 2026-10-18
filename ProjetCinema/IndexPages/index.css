@@ -1,0 +1,181 @@
+/* Pour la raison que je ne suis pas designer, j'admets avoir demandé à l'IA claude de m'aider un peu à faire un visuel esthétique pour le site du cinéma*/
+
+
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-header: rgba(15, 17, 23, 0.9);
+  --text: #f1f1f4;
+  --text-muted: #a0a3b1;
+  --accent: #e50914;
+  --accent-hover: #ff2a36;
+  --radius: 12px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* En-tête */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--bg-header);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+ 
+nav a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+
+/* Contenu principal */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 32px;
+}
+ 
+main h2 {
+  font-size: 1.6rem;
+  margin: 8px 0 24px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+/*Section films en tendance*/
+/* Afficher les films en grille */
+#movie-list,
+#random-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CSS pour les cartes de films */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+ 
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(229, 9, 20, 0.25);
+}
+ 
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #262a38;
+}
+ 
+.card h3 {
+  font-size: 1.05rem;
+  padding: 14px 14px 0;
+}
+ 
+.card .year {
+  padding: 4px 14px 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+ 
+/* Résumé limité à 10 lignes */
+.card .plot {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 8px 14px 16px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+ 
+/* Bouton */
+button {
+  display: block;
+  margin: 48px auto 28px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+ 
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: scale(1.04);
+}
+ 
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+ 
+/* Pied de page */
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
