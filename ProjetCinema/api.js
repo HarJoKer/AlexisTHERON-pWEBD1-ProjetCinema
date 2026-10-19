@@ -16,3 +16,11 @@ const response = await fetch(url);
 const data = await response.json();
 return data.Response === "True" ? data : null;
 }
+
+//Je recherche une liste de films par mot-clé (retourne un tableau, vide si rien)
+export async function searchMovies(query, page = 1) {
+  const url = `${BASE_URL}?apikey=${API_Key}&s=${encodeURIComponent(query)}&page=${page}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.Response === "True" ? data.Search : [];
+}
