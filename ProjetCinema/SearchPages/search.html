@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche de films</title>
+  <link rel="stylesheet" href="search.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Recherche de films</h1>
+    <form id="search-form" class="search-form" role="search" autocomplete="off">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Rechercher un film…"
+        aria-label="Rechercher un film"
+        autofocus
+      >
+    </form>
+  </header>
+
+  <main class="main">
+    <p id="status" class="status" aria-live="polite"></p>
+    <section id="results" class="results" aria-label="Résultats de la recherche"></section>
+    <div class="more-wrapper">
+      <button id="load-more" class="load-more" type="button" hidden>Charger plus de résultats</button>
+    </div>
+  </main>
+
+  <script src="search.js"></script>
+</body>
+</html>
