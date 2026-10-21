@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du film</title>
+    <link rel="stylesheet" href="../IndexPages/index.css">
+    <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cinéma du village</h1>
+        <nav>
+            <a href="../IndexPages/index.html">Accueil</a>
+            <a href="../SearchPages/search.html">Recherche</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="../IndexPages/index.html" class="back">&larr; Retour</a>
+
+        <p id="message">Chargement...</p>
+
+        <article id="movie" hidden>
+            <img id="movie-poster" class="poster" src="" alt="">
+
+            <div class="movie-info">
+                <h2 id="movie-title"></h2>
+
+                <div id="movie-genres" class="tags"></div>
+
+                <h3>Résumé</h3>
+                <p id="movie-plot"></p>
+
+                <h3>Acteurs</h3>
+                <p id="movie-actors"></p>
+
+                <h3>Notes</h3>
+                <ul id="movie-ratings" class="ratings"></ul>
+
+                <h3>Sortie en DVD</h3>
+                <p id="movie-dvd"></p>
+            </div>
+        </article>
+    </main>
+    <script type="module" src="movie.js"></script>
+</body>
+
+</html>

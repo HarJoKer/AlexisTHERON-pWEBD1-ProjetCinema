@@ -21,7 +21,7 @@ const list = document.querySelector("#movie-list");
 function createMovieElement(movie) {
     const card = document.createElement("a");
     card.className = "card";
-    card.href = `movie.html?id=${movie.imdbID}`;
+    card.href = `../MoviePages/movie.html?id=${movie.imdbID}`;
 
     const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : PLACEHOLDER_POSTER;
     const plot = movie.Plot && movie.Plot !== "N/A" ? movie.Plot : "Résumé indisponible.";
